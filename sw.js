@@ -2,7 +2,7 @@
 const CACHE_NAME = 'police-case-cache-v1';
 const urlsToCache = [
   './',
-  './Police_Case.html',
+  './index.html',
   'https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js'
 ];
 
@@ -31,4 +31,5 @@ self.addEventListener('fetch', event => {
         return fetch(event.request);
       })
   );
+
 });
