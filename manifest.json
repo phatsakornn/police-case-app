@@ -1,7 +1,7 @@
 {
   "name": "Police Case Report",
   "short_name": "Case Report",
-  "start_url": "./Police_Case.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0f172a",
   "theme_color": "#22d3ee",
@@ -18,4 +18,5 @@
       "type": "image/png"
     }
   ]
+
 }
