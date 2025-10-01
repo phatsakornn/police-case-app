@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta name="theme-color" content="#22d3ee"/>
-<link rel="apple-touch-icon" href="icon-192.png">
-<link rel="manifest" href="manifest.json">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ระบบรายงานเคส Police 86 Community</title>
@@ -277,7 +274,7 @@ const OFFENSES = [
 
   // ----- ตัวคูณ/เงื่อนไขพิเศษ (modifiers)
   {id:'mod_emote_x5', label:'(ตัวคูณ) Emote/Shift+H (เฉพาะงานดำ) → คูณ x5', fine:0, jail:0, type:'mod', bail:'inherit'},
-  {id:'mod_mountain_water_x5', label:'(ตัวคูณ) หลบหนีขึ้นเขา/ลงน้ำ (เฉพาะงานดำ) → คูณ x5 + ฐานเวลา +15 นาที', fine:0, jail:15, type:'mod', bail:'inherit'},
+  {id:'mod_mountain_water_x5', label:'(ตัวคูณ) หลบหนีขึ้นเขา/ลงน้ำ (เฉพาะงานดำ) → คูณ x5 +15 นาที', fine:0, jail:0, type:'mod', bail:'inherit'},
   {id:'mod_outside_city_x5', label:'(ตัวคูณ) หลบหนีนอกเมือง → คูณ x5 + ฐานเวลา +10 นาที', fine:0, jail:10, type:'mod', bail:'inherit'},
   {id:'mod_x2', label:'(ตัวคูณ) x2 (เช่น ยัดของผิดกฎหมาย/ไม่มารายงานตัวเกิน 3 หมาย ฯลฯ)', fine:0, jail:0, type:'mod', bail:'inherit'},
   {id:'mod_x20', label:'(ตัวคูณ) ทำงานดำก่อนประเทศรี 15 นาที → x20 + ฐานเวลา +15 นาที', fine:0, jail:15, type:'mod', bail:'inherit'}
@@ -450,7 +447,7 @@ function compute(){
   const hasMtWater = selectedIds.has('mod_mountain_water_x5');
 
   if(hasMtWater){ // base +15 นาที
-    jail += 15;
+    jail += 0;
     catMin.orange += 15; // นับเป็นหมวดส้มสำหรับการประกัน (เงื่อนไขพิเศษ)
     steps.push('• เพิ่มฐานเวลา 15 นาที (หลบหนีขึ้นเขา/ลงน้ำ)');
   }
@@ -829,16 +826,6 @@ showResult(0,0,0,0,[]);
   };
 })();
 </script>
-<script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js').then(registration => {
-          console.log('ServiceWorker registration successful');
-        }).catch(err => {
-          console.log('ServiceWorker registration failed: ', err);
-        });
-      });
-    }
-</script>
+
 </body>
 </html>
